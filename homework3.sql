@@ -1403,91 +1403,273 @@ INSERT INTO employees VALUES
    , 205
    , 110
    );
+   
+   
+   
 
 
-SELECT First_Name, Last_Name, Salary FROM employees;
+------------------------------------------------------------------- JOBS TABLE ------------------------------------------------------------------------------------
 
-SELECT * FROM employees;
+CREATE TABLE jobs (
+    Job_ID VARCHAR(100),
+    job_title VARCHAR(40),
+    min_salary NUMBER(10),
+    max_salary NUMBER(10)
+);
 
-SELECT First_Name FirstName, Last_Name LastName , Salary PESA 
-    FROM employees;
-    
-SELECT First_Name, Last_Name, Salary 
+INSERT INTO jobs VALUES 
+   ( 'AD_PRES'
+   , 'President'
+   , 20000
+   , 40000
+   );
+   INSERT INTO jobs VALUES 
+   ( 'AD_VP'
+   , 'Administration Vice President'
+   , 15000
+   , 30000
+   );
+INSERT INTO jobs VALUES 
+   ( 'AD_ASST'
+   , 'Administration Assistant'
+   , 3000
+   , 6000
+   );
+INSERT INTO jobs VALUES 
+   ( 'FI_MGR'
+   , 'Finance Manager'
+   , 8200
+   , 16000
+   );
+INSERT INTO jobs VALUES 
+   ( 'FI_ACCOUNT'
+   , 'Accountant'
+   , 4200
+   , 9000
+   );
+INSERT INTO jobs VALUES 
+   ( 'AC_MGR'
+   , 'Accounting Manager'
+   , 8200
+   , 16000
+   );
+INSERT INTO jobs VALUES 
+   ( 'AC_ACCOUNT'
+   , 'Public Accountant'
+   , 4200
+   , 9000
+   );
+   INSERT INTO jobs VALUES 
+   ( 'SA_MAN'
+   , 'Sales Manager'
+   , 10000
+   , 20000
+   );
+INSERT INTO jobs VALUES 
+   ( 'SA_REP'
+   , 'Sales Representative'
+   , 6000
+   , 12000
+   );
+INSERT INTO jobs VALUES 
+   ( 'PU_MAN'
+   , 'Purchasing Manager'
+   , 8000
+   , 15000
+   );
+INSERT INTO jobs VALUES 
+   ( 'PU_CLERK'
+   , 'Purchasing Clerk'
+   , 2500
+   , 5500
+   );
+INSERT INTO jobs VALUES 
+   ( 'ST_MAN'
+   , 'Stock Manager'
+   , 5500
+   , 8500
+   );
+   INSERT INTO jobs VALUES 
+   ( 'ST_CLERK'
+   , 'Stock Clerk'
+   , 2000
+   , 5000
+   );
+INSERT INTO jobs VALUES 
+   ( 'SH_CLERK'
+   , 'Shipping Clerk'
+   , 2500
+   , 5500
+   );
+INSERT INTO jobs VALUES 
+   ( 'IT_PROG'
+   , 'Programmer'
+   , 4000
+   , 10000
+   );
+INSERT INTO jobs VALUES 
+   ( 'MK_MAN'
+   , 'Marketing Manager'
+   , 9000
+   , 15000
+   );
+INSERT INTO jobs VALUES 
+   ( 'MK_REP'
+   , 'Marketing Representative'
+   , 4000
+   , 9000
+   );
+INSERT INTO jobs VALUES 
+   ( 'HR_REP'
+   , 'Human Resources Representative'
+   , 4000
+   , 9000
+   );
+INSERT INTO jobs VALUES 
+   ( 'PR_REP'
+   , 'Public Relations Representative'
+   , 4500
+   , 10500
+   );
+   
+
+SELECT * FROM jobs;
+
+
+
+
+   
+   
+-----------------------------------------------------------------JOB HISTORY TABLE--------------------------------------------------------------------------------
+   
+   
+CREATE TABLE job_history (
+    Employee_ID NUMBER(10),
+    Start_Date DATE,
+    End_Date DATE,
+    Job_ID VARCHAR(100),
+    Department_ID NUMBER(10)
+);
+
+
+
+INSERT INTO job_history
+         VALUES (102
+   , TO_DATE('13-JAN-1993', 'dd-MON-yyyy')
+   , TO_DATE('24-JUL-1998', 'dd-MON-yyyy')
+   , 'IT_PROG'
+   , 60);
+INSERT INTO job_history
+         VALUES (101
+   , TO_DATE('21-SEP-1989', 'dd-MON-yyyy')
+   , TO_DATE('27-OCT-1993', 'dd-MON-yyyy')
+   , 'AC_ACCOUNT'
+   , 110);
+INSERT INTO job_history
+         VALUES (101
+   , TO_DATE('28-OCT-1993', 'dd-MON-yyyy')
+   , TO_DATE('15-MAR-1997', 'dd-MON-yyyy')
+   , 'AC_MGR'
+   , 110);
+INSERT INTO job_history
+         VALUES (201
+   , TO_DATE('17-FEB-1996', 'dd-MON-yyyy')
+   , TO_DATE('19-DEC-1999', 'dd-MON-yyyy')
+   , 'MK_REP'
+   , 20);
+INSERT INTO job_history
+         VALUES (114
+   , TO_DATE('24-MAR-1998', 'dd-MON-yyyy')
+   , TO_DATE('31-DEC-1999', 'dd-MON-yyyy')
+   , 'ST_CLERK'
+   , 50
+   );
+INSERT INTO job_history
+         VALUES (122
+   , TO_DATE('01-JAN-1999', 'dd-MON-yyyy')
+   , TO_DATE('31-DEC-1999', 'dd-MON-yyyy')
+   , 'ST_CLERK'
+   , 50
+   );
+INSERT INTO job_history
+         VALUES (200
+   , TO_DATE('17-SEP-1987', 'dd-MON-yyyy')
+   , TO_DATE('17-JUN-1993', 'dd-MON-yyyy')
+   , 'AD_ASST'
+   , 90
+   );
+INSERT INTO job_history
+         VALUES (176
+   , TO_DATE('24-MAR-1998', 'dd-MON-yyyy')
+   , TO_DATE('31-DEC-1998', 'dd-MON-yyyy')
+   , 'SA_REP'
+   , 80
+   );
+INSERT INTO job_history
+         VALUES (176
+   , TO_DATE('01-JAN-1999', 'dd-MON-yyyy')
+   , TO_DATE('31-DEC-1999', 'dd-MON-yyyy')
+   , 'SA_MAN'
+   , 80
+   );
+INSERT INTO job_history
+         VALUES (200
+   , TO_DATE('01-JUL-1994', 'dd-MON-yyyy')
+   , TO_DATE('31-DEC-1998', 'dd-MON-yyyy')
+   , 'AC_ACCOUNT'
+   , 90
+   );
+   
+
+SELECT * FROM job_history;
+
+
+   
+   
+   
+
+
+--1. Employees Table: Write a query to return all employees that work under manager whose first name is ‘Nancy’
+
+SELECT First_Name, Last_Name, Job_ID
     FROM employees
-    FETCH FIRST 10 ROWS ONLY;
+    WHERE Job_ID LIKE 'FI%';
     
-SELECT First_Name, Last_Name 
-    FROM employees
-    WHERE Department_ID=20;
     
-SELECT First_Name, Last_Name, Salary
+--2. Write a query in SQL to display the full name (first name and last name), hire date, commission percentage, email and telephone separated by '-', and salary
+-- for those employees who earn the salary above 11000 or the seventh digit in their phone number equals 3 and make the result set in a descending order by the
+-- first name.     
+
+SELECT First_Name|| ' - ' ||Last_Name|| ' - '  ||Hire_Date|| ' - ' ||CommisSion_PCT|| ' - ' ||Email|| ' - ' ||Phone_Number|| ' - ' ||Salary
     FROM employees
-    WHERE Salary>10000;
+    WHERE Salary > 11000 OR Phone_Number LIKE '______3%';
     
-SELECT First_Name, Last_Name, Salary
-    FROM employees
-    WHERE Salary/365 > 100
-    UNION ALL
-    SELECT 'No Records', 'Found', 0
-    FROM DUAL
-    WHERE NOT EXISTS (
-        SELECT 1
-        FROM employees
-        WHERE Salary/365 > 100
-    );
+    
+--3. Write a query in SQL to display the first and last name, and department number for those employees who holds a letter s as a 3rd character in their first name
 
 SELECT First_Name, Last_Name, Department_ID
     FROM employees
-    WHERE NOT Department_ID=20;
+    WHERE First_Name LIKE '__s%';
     
-SELECT First_Name, Last_Name, Job_ID, Salary
-    FROM employees
-    WHERE Job_ID='AC_MGR' AND Salary > 5000;
-    
-SELECT First_Name, Last_Name, Job_ID, Salary
-    FROM employees
-    WHERE Job_ID='FI_ACCOUNT' AND Salary < 20000;
-    
-SELECT First_Name, Last_Name, Job_ID, Salary
-    FROM employees
-    WHERE Job_ID='FI_ACCOUNT' AND Salary >= 5000 AND Salary <= 20000;
-    
-SELECT First_Name, Last_Name, CommisSion_PCT, Job_ID
-    FROM employees
-    WHERE CommisSion_PCT IS NOT NULL;
-    
-SELECT First_Name, Last_Name, Salary
-    FROM employees
-    WHERE First_Name IN ('Diana', 'Neena');
 
-SELECT First_Name, Last_Name, Job_ID, Salary
+--4. Write a query in SQL to display the employee ID, first name, job id, and department number for those employees who is working except the departments 
+-- 50,30 and 80.
+
+SELECT Employee_ID, First_Name,Job_ID, Department_ID
     FROM employees
-    WHERE NOT Job_ID = 'AD_PRES' AND NOT Job_ID = 'AC_MGR'
-    ORDER BY Salary DESC;
+    WHERE NOT Department_ID IN (50, 30, 80);
     
-SELECT First_Name, Last_Name, Hire_Date
+
+--5. Write a query in SQL to display the employee Id, first name,job id, and department number for those employees whose department number equals 30, 40 or 90 
+-- Hint: OR Logic.
+
+SELECT Employee_ID, First_Name, Job_ID, Department_ID
     FROM employees
-    WHERE NOT Hire_Date LIKE '%05';
+    WHERE Department_ID = 30 OR Department_ID = 40 OR Department_ID = 90;
     
-SELECT First_Name, Last_Name, Hire_Date, Job_ID
-    FROM employees
-    WHERE Hire_Date IN ('1-JUL-06', '24-MAR-07', '04-JAN-08', '17-JUN-87', '13-JAN-93', '01-AUG-96')
-    ORDER BY 
-        CASE 
-            WHEN Job_ID LIKE '%PRES%' THEN 1
-            WHEN Job_ID LIKE '%VP%' THEN 2
-            WHEN Job_ID LIKE '%MGR%' THEN 3
-            ELSE 4
-        END,
-        Hire_Date ASC;
-        
-SELECT First_Name || ' ' || Last_Name || ' - ' ||Job_ID
-    FROM employees;
-        
-SELECT First_Name, Last_Name, Hire_Date
-    FROM employees
-    WHERE Hire_Date BETWEEN '01-JAN-2004' AND '31-DEC-2008'
-    ORDER BY Hire_Date ASC;
+    
+--6. Write a query in SQL to display the ID for those employees who did two or more jobs in the past 
+-- Hint: Job History table.
 
 
-    
+
