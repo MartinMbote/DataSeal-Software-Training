@@ -4,7 +4,7 @@ CREATE TABLE employees (
     Last_Name VARCHAR(50),
     Email VARCHAR(50),
     Phone_Number VARCHAR(50),
-    Hire_Date VARCHAR(50),
+    Hire_Date DATE,
     Job_ID VARCHAR(100),
     Salary NUMBER(10),
     CommisSion_PCT NUMBER(10),
@@ -1460,6 +1460,34 @@ SELECT First_Name, Last_Name, Salary
     FROM employees
     WHERE First_Name IN ('Diana', 'Neena');
 
-SELECT First_Name, Last_Name, Job_ID
+SELECT First_Name, Last_Name, Job_ID, Salary
     FROM employees
-    WHERE NOT Job_ID = 'AD_PRES' AND NOT Job_ID = 'AC_MGR';
+    WHERE NOT Job_ID = 'AD_PRES' AND NOT Job_ID = 'AC_MGR'
+    ORDER BY Salary DESC;
+    
+SELECT First_Name, Last_Name, Hire_Date
+    FROM employees
+    WHERE NOT Hire_Date LIKE '%05';
+    
+SELECT First_Name, Last_Name, Hire_Date, Job_ID
+    FROM employees
+    WHERE Hire_Date IN ('1-JUL-06', '24-MAR-07', '04-JAN-08', '17-JUN-87', '13-JAN-93', '01-AUG-96')
+    ORDER BY 
+        CASE 
+            WHEN Job_ID LIKE '%PRES%' THEN 1
+            WHEN Job_ID LIKE '%VP%' THEN 2
+            WHEN Job_ID LIKE '%MGR%' THEN 3
+            ELSE 4
+        END,
+        Hire_Date ASC;
+        
+SELECT First_Name || ' ' || Last_Name || ' - ' ||Job_ID
+    FROM employees;
+        
+SELECT First_Name, Last_Name, Hire_Date
+    FROM employees
+    WHERE Hire_Date BETWEEN '01-JAN-2004' AND '31-DEC-2008'
+    ORDER BY Hire_Date ASC;
+
+
+    
