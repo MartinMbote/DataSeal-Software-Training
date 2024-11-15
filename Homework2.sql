@@ -1427,7 +1427,7 @@ SELECT First_Name, Last_Name, Salary
 SELECT First_Name, Last_Name, Salary
     FROM employees
     WHERE Salary/365 > 100
-    UNION ALL
+    UNION
     SELECT 'No Records', 'Found', 0
     FROM DUAL
     WHERE NOT EXISTS (

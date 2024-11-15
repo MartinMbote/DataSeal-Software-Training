@@ -1534,6 +1534,7 @@ INSERT INTO jobs VALUES
    
 
 SELECT * FROM jobs;
+SELECT * FROM employees;
 
 
 
@@ -1631,9 +1632,9 @@ SELECT * FROM job_history;
 
 --1. Employees Table: Write a query to return all employees that work under manager whose first name is ‘Nancy’
 
-SELECT First_Name, Last_Name, Job_ID
+SELECT First_Name, Last_Name, Job_ID, Department_ID
     FROM employees
-    WHERE Job_ID LIKE 'FI%';
+    WHERE Job_ID LIKE 'FI%' AND Job_ID != 'FI_MGR';
     
     
 --2. Write a query in SQL to display the full name (first name and last name), hire date, commission percentage, email and telephone separated by '-', and salary
@@ -1642,7 +1643,8 @@ SELECT First_Name, Last_Name, Job_ID
 
 SELECT First_Name|| ' - ' ||Last_Name|| ' - '  ||Hire_Date|| ' - ' ||CommisSion_PCT|| ' - ' ||Email|| ' - ' ||Phone_Number|| ' - ' ||Salary
     FROM employees
-    WHERE Salary > 11000 OR Phone_Number LIKE '______3%';
+    WHERE Salary > 11000 OR Phone_Number LIKE '______3%'
+    ORDER BY First_Name DESC;
     
     
 --3. Write a query in SQL to display the first and last name, and department number for those employees who holds a letter s as a 3rd character in their first name
@@ -1672,4 +1674,8 @@ SELECT Employee_ID, First_Name, Job_ID, Department_ID
 -- Hint: Job History table.
 
 
+SELECT Employee_ID
+    FROM job_history
+    GROUP BY Employee_ID
+    HAVING COUNT(Employee_ID) >= 2;
 
