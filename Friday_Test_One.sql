@@ -1,3 +1,5 @@
+--Name: Martin Maina Mbote
+
 CREATE TABLE employees (
     Employee_ID NUMBER(10),
     First_Name VARCHAR(50),
@@ -1403,91 +1405,674 @@ INSERT INTO employees VALUES
    , 205
    , 110
    );
+   
+--------------------------------------------------------------------DEPARTMENTS TABLE----------------------------------------------------------------------------
+
+CREATE TABLE departments
+    ( department_id    NUMBER(4)
+    , department_name  VARCHAR2(30)
+	CONSTRAINT  dept_name_nn  NOT NULL
+    , manager_id       NUMBER(6)
+    , location_id      NUMBER(4)
+    ) ;
+    
+INSERT INTO departments VALUES
+      ( 10
+      , 'Administration'
+      , 200
+      , 1700
+      );
+
+  INSERT INTO departments VALUES
+      ( 20
+      , 'Marketing'
+      , 201
+      , 1800
+      );
+
+  INSERT INTO departments VALUES
+      ( 30
+      , 'Purchasing'
+      , 114
+      , 1700
+      );
+
+  INSERT INTO departments VALUES
+      ( 40
+      , 'Human Resources'
+      , 203
+      , 2400
+      );
+
+  INSERT INTO departments VALUES
+      ( 50
+      , 'Shipping'
+      , 121
+      , 1500
+      );
+
+  INSERT INTO departments VALUES
+      ( 60
+      , 'IT'
+      , 103
+      , 1400
+      );
+
+  INSERT INTO departments VALUES
+      ( 70
+      , 'Public Relations'
+      , 204
+      , 2700
+      );
+
+  INSERT INTO departments VALUES
+      ( 80
+      , 'Sales'
+      , 145
+      , 2500
+      );
+
+  INSERT INTO departments VALUES
+      ( 90
+      , 'Executive'
+      , 100
+      , 1700
+      );
+
+  INSERT INTO departments VALUES
+      ( 100
+      , 'Finance'
+      , 108
+      , 1700
+      );
+
+  INSERT INTO departments VALUES
+      ( 110
+      , 'Accounting'
+      , 205
+      , 1700
+      );
+
+  INSERT INTO departments VALUES
+      ( 120
+      , 'Treasury'
+      , NULL
+      , 1700
+      );
+
+  INSERT INTO departments VALUES
+      ( 130
+      , 'Corporate Tax'
+      , NULL
+      , 1700
+      );
+
+  INSERT INTO departments VALUES
+      ( 140
+      , 'Control And Credit'
+      , NULL
+      , 1700
+      );
+
+  INSERT INTO departments VALUES
+      ( 150
+      , 'Shareholder Services'
+      , NULL
+      , 1700
+      );
+
+  INSERT INTO departments VALUES
+      ( 160
+      , 'Benefits'
+      , NULL
+      , 1700
+      );
+
+  INSERT INTO departments VALUES
+      ( 170
+      , 'Manufacturing'
+      , NULL
+      , 1700
+      );
+
+  INSERT INTO departments VALUES
+      ( 180
+      , 'Construction'
+      , NULL
+      , 1700
+      );
+
+  INSERT INTO departments VALUES
+      ( 190
+      , 'Contracting'
+      , NULL
+      , 1700
+      );
+
+  INSERT INTO departments VALUES
+      ( 200
+      , 'Operations'
+      , NULL
+      , 1700
+      );
+
+  INSERT INTO departments VALUES
+      ( 210
+      , 'IT Support'
+      , NULL
+      , 1700
+      );
+
+  INSERT INTO departments VALUES
+      ( 220
+      , 'NOC'
+      , NULL
+      , 1700
+      );
+
+  INSERT INTO departments VALUES
+      ( 230
+      , 'IT Helpdesk'
+      , NULL
+      , 1700
+      );
+
+  INSERT INTO departments VALUES
+      ( 240
+      , 'Government Sales'
+      , NULL
+      , 1700
+      );
+
+  INSERT INTO departments VALUES
+      ( 250
+      , 'Retail Sales'
+      , NULL
+      , 1700
+      );
+
+  INSERT INTO departments VALUES
+      ( 260
+      , 'Recruiting'
+      , NULL
+      , 1700
+      );
+
+  INSERT INTO departments VALUES
+      ( 270
+      , 'Payroll'
+      , NULL
+      , 1700
+      );
+      
+      
+      
+--------------------------------------------------------------------LOCATIONS-------------------------------------------------------------------------------------
+      
+CREATE TABLE locations
+    ( location_id    NUMBER(4)
+    , street_address VARCHAR2(40)
+    , postal_code    VARCHAR2(12)
+    , city       VARCHAR2(30)
+	CONSTRAINT     loc_city_nn  NOT NULL
+    , state_province VARCHAR2(25)
+    , country_id     CHAR(2)
+    ) ;
+    
+    
+INSERT INTO locations VALUES
+      ( 1000
+      , '1297 Via Cola di Rie'
+      , '00989'
+      , 'Roma'
+      , NULL
+      , 'IT'
+      );
+
+  INSERT INTO locations VALUES
+      ( 1100
+      , '93091 Calle della Testa'
+      , '10934'
+      , 'Venice'
+      , NULL
+      , 'IT'
+      );
+
+  INSERT INTO locations VALUES
+      ( 1200
+      , '2017 Shinjuku-ku'
+      , '1689'
+      , 'Tokyo'
+      , 'Tokyo Prefecture'
+      , 'JP'
+      );
+
+  INSERT INTO locations VALUES
+      ( 1300
+      , '9450 Kamiya-cho'
+      , '6823'
+      , 'Hiroshima'
+      , NULL
+      , 'JP'
+      );
+
+  INSERT INTO locations VALUES
+      ( 1400
+      , '2014 Jabberwocky Rd'
+      , '26192'
+      , 'Southlake'
+      , 'Texas'
+      , 'US'
+      );
+
+  INSERT INTO locations VALUES
+      ( 1500
+      , '2011 Interiors Blvd'
+      , '99236'
+      , 'South San Francisco'
+      , 'California'
+      , 'US'
+      );
+
+  INSERT INTO locations VALUES
+      ( 1600
+      , '2007 Zagora St'
+      , '50090'
+      , 'South Brunswick'
+      , 'New Jersey'
+      , 'US'
+      );
+
+  INSERT INTO locations VALUES
+      ( 1700
+      , '2004 Charade Rd'
+      , '98199'
+      , 'Seattle'
+      , 'Washington'
+      , 'US'
+      );
+
+  INSERT INTO locations VALUES
+      ( 1800
+      , '147 Spadina Ave'
+      , 'M5V 2L7'
+      , 'Toronto'
+      , 'Ontario'
+      , 'CA'
+      );
+
+  INSERT INTO locations VALUES
+      ( 1900
+      , '6092 Boxwood St'
+      , 'YSW 9T2'
+      , 'Whitehorse'
+      , 'Yukon'
+      , 'CA'
+      );
+
+  INSERT INTO locations VALUES
+      ( 2000
+      , '40-5-12 Laogianggen'
+      , '190518'
+      , 'Beijing'
+      , NULL
+      , 'CN'
+      );
+
+  INSERT INTO locations VALUES
+      ( 2100
+      , '1298 Vileparle (E)'
+      , '490231'
+      , 'Bombay'
+      , 'Maharashtra'
+      , 'IN'
+      );
+
+  INSERT INTO locations VALUES
+      ( 2200
+      , '12-98 Victoria Street'
+      , '2901'
+      , 'Sydney'
+      , 'New South Wales'
+      , 'AU'
+      );
+
+  INSERT INTO locations VALUES
+      ( 2300
+      , '198 Clementi North'
+      , '540198'
+      , 'Singapore'
+      , NULL
+      , 'SG'
+      );
+
+  INSERT INTO locations VALUES
+      ( 2400
+      , '8204 Arthur St'
+      , NULL
+      , 'London'
+      , NULL
+      , 'GB'
+      );
+
+  INSERT INTO locations VALUES
+      ( 2500
+      , 'Magdalen Centre, The Oxford Science Park'
+      , 'OX9 9ZB'
+      , 'Oxford'
+      , 'Oxford'
+      , 'GB'
+      );
+
+  INSERT INTO locations VALUES
+      ( 2600
+      , '9702 Chester Road'
+      , '09629850293'
+      , 'Stretford'
+      , 'Manchester'
+      , 'GB'
+      );
+
+  INSERT INTO locations VALUES
+      ( 2700
+      , 'Schwanthalerstr. 7031'
+      , '80925'
+      , 'Munich'
+      , 'Bavaria'
+      , 'DE'
+      );
+
+  INSERT INTO locations VALUES
+      ( 2800
+      , 'Rua Frei Caneca 1360 '
+      , '01307-002'
+      , 'Sao Paulo'
+      , 'Sao Paulo'
+      , 'BR'
+      );
+
+  INSERT INTO locations VALUES
+      ( 2900
+      , '20 Rue des Corps-Saints'
+      , '1730'
+      , 'Geneva'
+      , 'Geneve'
+      , 'CH'
+      );
+
+  INSERT INTO locations VALUES
+      ( 3000
+      , 'Murtenstrasse 921'
+      , '3095'
+      , 'Bern'
+      , 'BE'
+      , 'CH'
+      );
+
+  INSERT INTO locations VALUES
+      ( 3100
+      , 'Pieter Breughelstraat 837'
+      , '3029SK'
+      , 'Utrecht'
+      , 'Utrecht'
+      , 'NL'
+      );
+
+  INSERT INTO locations VALUES
+      ( 3200
+      , 'Mariano Escobedo 9991'
+      , '11932'
+      , 'Mexico City'
+      , 'Distrito Federal'
+      , 'MX'
+      );
+      
+      
+      
+      
+--------------------------------------------------------------------COUNTIRES-------------------------------------------------------------------------------------
+
+CREATE TABLE countries 
+    ( country_id      CHAR(2) 
+       CONSTRAINT  country_id_nn NOT NULL 
+    , country_name    VARCHAR2(60) 
+    , region_id       NUMBER 
+    , CONSTRAINT     country_c_id_pk 
+        	     PRIMARY KEY (country_id) 
+    ) 
+    ORGANIZATION INDEX;
+    
+INSERT INTO countries VALUES
+      ( 'IT'
+      , 'Italy'
+      , 10
+      );
+
+  INSERT INTO countries VALUES
+      ( 'JP'
+      , 'Japan'
+      , 30
+      );
+
+  INSERT INTO countries VALUES
+      ( 'US'
+      , 'United States of America'
+      , 20
+      );
+
+  INSERT INTO countries VALUES
+      ( 'CA'
+      , 'Canada'
+      , 20
+      );
+
+  INSERT INTO countries VALUES
+      ( 'CN'
+      , 'China'
+      , 30
+      );
+
+  INSERT INTO countries VALUES
+      ( 'IN'
+      , 'India'
+      , 30
+      );
+
+  INSERT INTO countries VALUES
+      ( 'AU'
+      , 'Australia'
+      , 40
+      );
+
+  INSERT INTO countries VALUES
+      ( 'ZW'
+      , 'Zimbabwe'
+      , 50
+      );
+
+  INSERT INTO countries VALUES
+      ( 'SG'
+      , 'Singapore'
+      , 30
+      );
+
+  INSERT INTO countries VALUES
+      ( 'GB'
+      , 'United Kingdom of Great Britain and Northern Ireland'
+      , 10
+      );
+
+  INSERT INTO countries VALUES
+      ( 'FR'
+      , 'France'
+      , 10
+      );
+
+  INSERT INTO countries VALUES
+      ( 'DE'
+      , 'Germany'
+      , 10
+      );
+
+  INSERT INTO countries VALUES
+      ( 'ZM'
+      , 'Zambia'
+      , 50
+      );
+
+  INSERT INTO countries VALUES
+      ( 'EG'
+      , 'Egypt'
+      , 50
+      );
+
+  INSERT INTO countries VALUES
+      ( 'BR'
+      , 'Brazil'
+      , 20
+      );
+
+  INSERT INTO countries VALUES
+      ( 'CH'
+      , 'Switzerland'
+      , 10
+      );
+
+  INSERT INTO countries VALUES
+      ( 'NL'
+      , 'Netherlands'
+      , 10
+      );
+
+  INSERT INTO countries VALUES
+      ( 'MX'
+      , 'Mexico'
+      , 20
+      );
+
+  INSERT INTO countries VALUES
+      ( 'KW'
+      , 'Kuwait'
+      , 30
+      );
+
+  INSERT INTO countries VALUES
+      ( 'IL'
+      , 'Israel'
+      , 30
+      );
+
+  INSERT INTO countries VALUES
+      ( 'DK'
+      , 'Denmark'
+      , 10
+      );
+
+  INSERT INTO countries VALUES
+      ( 'ML'
+      , 'Malaysia'
+      , 30
+      );
+
+  INSERT INTO countries VALUES
+      ( 'NG'
+      , 'Nigeria'
+      , 50
+      );
+
+  INSERT INTO countries VALUES
+      ( 'AR'
+      , 'Argentina'
+      , 20
+      );
+
+  INSERT INTO countries VALUES
+      ( 'BE'
+      , 'Belgium'
+      , 10
+      );
 
 
-SELECT First_Name, Last_Name, Salary FROM employees;
 
-SELECT * FROM employees;
+   
 
-SELECT First_Name FirstName, Last_Name LastName , Salary PESA 
-    FROM employees;
-    
-SELECT First_Name, Last_Name, Salary 
+--USE HR SCHEMA to answer below Questions
+
+
+-- 1. The HR schema, provides the Employees Details including their Current Job Titles as well as their Job History. 
+--    Using the details [Tables and the data Provided] , Which JOB_TITLE has the most employees? Write an SQL statement.
+
+SELECT Job_ID, COUNT(Employee_ID) AS Total_Employees
     FROM employees
-    FETCH FIRST 10 ROWS ONLY;
+    GROUP BY Job_ID
+    ORDER BY COUNT(*) DESC
+    FETCH FIRST 1 ROWS ONLY;
     
-SELECT First_Name, Last_Name 
-    FROM employees
-    WHERE Department_ID=20;
     
-SELECT First_Name, Last_Name, Salary
+-- 2. The EMPLOYEES table Provide the Employee First and Last name as well as their HIRE_DATE, using these  columns, 
+--    List the Employee Full_Name and the HIRE_DATE for all the employees who were hired during the YEAR that had the Highest no.of employee Hired.
+ 
+SELECT CONCAT(CONCAT(First_Name, ' '), Last_Name) AS Full_Name, Hire_Date
     FROM employees
-    WHERE Salary>10000;
-    
-SELECT First_Name, Last_Name, Salary
-    FROM employees
-    WHERE Salary/365 < 100
-    UNION
-    SELECT 'No Records', 'Found', 0
-    FROM DUAL
-    WHERE NOT EXISTS (
-        SELECT 1
+    WHERE EXTRACT(YEAR FROM Hire_Date) = 
+        (
+        SELECT EXTRACT(YEAR FROM Hire_Date)
         FROM employees
-        WHERE Salary/365 > 100
-    );
-
-SELECT First_Name, Last_Name, Department_ID
-    FROM employees
-    WHERE NOT Department_ID=20;
-    
-SELECT First_Name, Last_Name, Job_ID, Salary
-    FROM employees
-    WHERE Job_ID='AC_MGR' AND Salary > 5000;
-    
-SELECT First_Name, Last_Name, Job_ID, Salary
-    FROM employees
-    WHERE Job_ID='FI_ACCOUNT' AND Salary < 20000;
-    
-SELECT First_Name, Last_Name, Job_ID, Salary
-    FROM employees
-    WHERE Job_ID='FI_ACCOUNT' AND Salary >= 5000 AND Salary <= 20000;
-    
-SELECT First_Name, Last_Name, CommisSion_PCT, Job_ID
-    FROM employees
-    WHERE CommisSion_PCT IS NOT NULL;
-    
-SELECT First_Name, Last_Name, Salary
-    FROM employees
-    WHERE First_Name IN ('Diana', 'Neena');
-
-SELECT First_Name, Last_Name, Job_ID, Salary
-    FROM employees
-    WHERE NOT Job_ID = 'AD_PRES' AND NOT Job_ID = 'AC_MGR'
-    ORDER BY Salary DESC;
-    
-SELECT First_Name, Last_Name, Hire_Date
-    FROM employees
-    WHERE NOT Hire_Date LIKE '%05';
-    
-SELECT First_Name, Last_Name, Hire_Date, Job_ID
-    FROM employees
-    WHERE Hire_Date IN ('1-JUL-06', '24-MAR-07', '04-JAN-08', '17-JUN-87', '13-JAN-93', '01-AUG-96')
-    ORDER BY 
-        CASE 
-            WHEN Job_ID LIKE '%PRES%' THEN 1
-            WHEN Job_ID LIKE '%VP%' THEN 2
-            WHEN Job_ID LIKE '%MGR%' THEN 3
-            ELSE 4
-        END,
-        Hire_Date ASC;
-        
-SELECT First_Name || ' ' || Last_Name || ' - ' ||Job_ID
-    FROM employees;
-        
-SELECT First_Name, Last_Name, Hire_Date
-    FROM employees
-    WHERE Hire_Date BETWEEN '01-JAN-2004' AND '31-DEC-2008'
-    ORDER BY Hire_Date ASC;
+        GROUP BY EXTRACT(YEAR FROM Hire_Date)
+        ORDER BY COUNT(Employee_ID) DESC
+        FETCH FIRST 1 ROWS ONLY
+        );
 
 
-    
+-- 3. Salary Increment: All the Employees working under a Manager will receive 10% salary increment in the incoming month, 
+--    Write an SQL statement to Populate the Employee_ID, FULL_Name , Current Salary and the Future Salary(After 10% increment)
+
+SELECT Employee_ID, CONCAT(CONCAT(First_Name, ' '), Last_Name) AS Full_Name, Salary, ((Salary * 10/100) + Salary) AS Future_Salary
+    FROM employees
+    WHERE Manager_ID IS NOT NULL;
+
+
+
+-- 4. Write an SQL statement to LIST DEPARTMENT_ID & DEPARTMENT_NAME FROM DEPARTMENTS TABLE for all departments without employees.
+
+SELECT d.department_id, d.department_name
+    FROM departments d
+    LEFT JOIN employees e
+    ON d.department_id = e.Department_ID
+    WHERE e.Department_ID IS NULL;
+
+
+
+-- 5. Write an SQL statement to LIST the details of the Earliest Hired Employee
+
+SELECT *
+    FROM employees
+    WHERE hire_date = 
+        (
+        SELECT MIN(hire_date) 
+        FROM employees
+        )
+    ;
+
+
+
+
+-- 8. What is the Average salary for all the Employees whose FIRST_NAME end with 'el' characters.
+
+SELECT First_Name, AVG(Salary)
+    FROM employees
+    GROUP BY First_Name
+    HAVING First_Name LIKE '%el';
+
+
+
+-- 9. Write an SQL statement to List the Country_Name with the Highest no of City Listed in the LOCATION Table.
+
+SELECT * FROM Countries;
+SELECT * FROM Locations;
+
+SELECT Country_ID, COUNT(city)
+    FROM Locations
+    GROUP BY Country_ID 
+    ORDER BY COUNT(city) DESC
+    FETCH FIRST 1 ROWS ONLY;

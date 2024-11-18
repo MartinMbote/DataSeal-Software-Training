@@ -1678,4 +1678,15 @@ SELECT Employee_ID
     FROM job_history
     GROUP BY Employee_ID
     HAVING COUNT(Employee_ID) >= 2;
+    
+    
+--7. Write a query in SQL to display job ID, number of employees, sum of salary, and difference between highest salary and lowest salary for a job.
+
+SELECT Job_ID, SUM(Salary), SUM(Employee_ID) AS 'Number of Employees'
+    FROM employees
+    GROUP BY Job_ID;
+    
+
+
+
 
