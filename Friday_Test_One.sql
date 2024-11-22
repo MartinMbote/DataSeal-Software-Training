@@ -2049,12 +2049,20 @@ SELECT *
     FROM employees
     WHERE hire_date = 
         (
-        SELECT MIN(hire_date) 
-        FROM employees
+            SELECT MIN(hire_date) 
+            FROM employees
         )
     ;
+    
+    
+    
+-- 6. Write an SQL statement to LIST the EMPLOYEES and their Respective Managers where applicable    
 
-
+SELECT e.employee_id, e.first_name, e.last_name, e.manager_id, m.first_name AS Manager_Name
+    FROM employees e
+    INNER JOIN employees m
+    ON e.manager_id = m.employee_id; 
+  
 
 
 -- 8. What is the Average salary for all the Employees whose FIRST_NAME end with 'el' characters.
@@ -2068,11 +2076,17 @@ SELECT First_Name, AVG(Salary)
 
 -- 9. Write an SQL statement to List the Country_Name with the Highest no of City Listed in the LOCATION Table.
 
-SELECT * FROM Countries;
-SELECT * FROM Locations;
-
 SELECT Country_ID, COUNT(city)
     FROM Locations
     GROUP BY Country_ID 
     ORDER BY COUNT(city) DESC
     FETCH FIRST 1 ROWS ONLY;
+    
+    
+-- 10. Creating a table: Create new table [NEW_DEPARTMENTS] FROM THE EXISTING DEPARTMENTS Table structure
+
+CREATE TABLE NEW_Departments AS
+    SELECT * 
+    FROM departments
+    WHERE 1=0
+;
